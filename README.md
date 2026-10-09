@@ -303,21 +303,20 @@ For each function:
     Otherwise, write `no`.
 
 | function | recurrence $T(n)$ | master theorem? | solution $\Theta(\cdot)$ | does memoization help? |
-| --- | --- | --- | --- | --- |
-| `binary_search`   | $T(n) = T(n/2) + \Theta(1)$  | yes | $T(n) = \Thete(log n)$   |
-| `merge_sorted`    | $T(n) = 2T(n/2) + \Theta(n)$ | yes | $T(n) = \Theta(n\log n)$ | no |
-| `quick_sorted`    | $T(n) = 2T(n/2) + \Theta(n)$ | yes | $T(n) = \Theta(n\log n)$ | |
-| `quick_select`    | $T(n) =  T(n/2) + \Theta(n)$ | yes | | |
-| `sequential_search_rec` | | | | |
-| `power`           | $T(n) = 2T(n/2) + \Theta(1)$ | yes | | yes |
-| `modified_pow`    | $T(n) =  T(n/2) + \Theta(1)$ | yes | | no (already memoized) |
-| `fib`             | $T(n) =  T(n-1) + T(n-2) + \Theta(1)$ | no  | --- | yes |
-| `fast_fib` (memoized `fib`) | $T(n) =  T(n-1) + \Theta(1)$ | no  | --- | no (already memoized) |
-| `grid_paths`      | | | | |
-| `foo1`            | | | | |
-| `foo2`            | | | | |
-| `foo3`            | | | | |
-
+| :--- | :--- | :--- | :--- | :--- |
+| `binary_search` | **$T(n) = T(n / 2) + \Theta(1)$** | **yes** | **$T(n) = \Theta(\log n)$** | **no** |
+| `merge_sorted` | $T(n) = 2T(n / 2) + \Theta(n)$ | yes | $T(n) = \Theta(n\log n)$ | no |
+| `quick_sorted` | $T(n) = 2T(n / 2) + \Theta(n)$ | yes | $T(n) = \Theta(n\log n)$ | **no** |
+| `quick_select` | $T(n) = T(n / 2) + \Theta(n)$ | yes | **$T(n) = \Theta(n)$** | **no** |
+| `sequential_search_rec` | **$T(n) = T(n - 1) + \Theta(1)$** | **no** | **$T(n) = \Theta(n)$** | **no** |
+| `power` | $T(n) = 2T(n / 2) + \Theta(1)$ | yes | **$T(n) = \Theta(n)$** | yes |
+| `modified_pow` | $T(n) = T(n / 2) + \Theta(1)$ | yes | **$T(n) = \Theta(\log n)$** | no (already memoized) |
+| `fib` | $T(n) = T(n - 1) + T(n - 2) + \Theta(1)$ | no | --- | yes |
+| `fast_fib` (memoized `fib` ) | $T(n) = T(n - 1) + \Theta(1)$ | no | --- | no (already memoized) |
+| `grid_paths` | **$T(m, n) = T(m - 1, n) + T(m, n - 1) + \Theta(1)$** | **no** | **$T(m,n) = \Theta\left(\binom{m+n}{m}\right)$** | **yes** |
+| `foo1` | **$T(n) = 3T(n / 2) + \Theta(n)$** | **yes** | **$T(n) = \Theta(n^{\log_2 3})$** | **no** |
+| `foo2` | **$T(n) = T(n - 1) + \Theta(n)$** | **no** | **$T(n) = \Theta(n^2)$** | **no** |
+| `foo3` | **$T(n) = 2T(n - 1) + \Theta(1)$** | **no** | **$T(n) = \Theta(2^n)$** | **yes** |
 ## Submission
 
 Ensure that all your images and completed table are pushed to github.
